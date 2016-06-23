@@ -1,4 +1,4 @@
-package com.gamesofton.appodeal;
+package com.tonofgames.appodeal;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.gamesofton.appodeal.Appodeal;
+import com.tonofgames.appodeal.Appodeal;
 
 public class AppodealPackage implements ReactPackage {
 
