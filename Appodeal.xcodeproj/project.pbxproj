@@ -1,0 +1,74 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		3B0C9BDC1D1C827900F644AF /* Appodeal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Appodeal.h; path = Appodeal/Appodeal.h; sourceTree = "<group>"; };
+		3B0C9BDD1D1C827900F644AF /* Appodeal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Appodeal.m; path = Appodeal/Appodeal.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3BE229E41D1C812D00495EE4 = {
+			isa = PBXGroup;
+			children = (
+				3B0C9BDC1D1C827900F644AF /* Appodeal.h */,
+				3B0C9BDD1D1C827900F644AF /* Appodeal.m */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		3BE229E51D1C812D00495EE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+			};
+			buildConfigurationList = 3BE229E81D1C812D00495EE4 /* Build configuration list for PBXProject "Appodeal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3BE229E41D1C812D00495EE4;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		3BE229E91D1C812D00495EE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		3BE229EA1D1C812D00495EE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BE229E81D1C812D00495EE4 /* Build configuration list for PBXProject "Appodeal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BE229E91D1C812D00495EE4 /* Debug */,
+				3BE229EA1D1C812D00495EE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BE229E51D1C812D00495EE4 /* Project object */;
+}
