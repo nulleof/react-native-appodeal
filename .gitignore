@@ -38,3 +38,6 @@ jspm_packages
 
 # Jetbrains Idea files
 .idea
+
+# Android studio files
+android.iml
