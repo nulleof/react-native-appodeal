@@ -6,6 +6,11 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3B9BDB9D1D1C8C1B00D23076 /* Appodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9BDB9C1D1C8C1B00D23076 /* Appodeal.m */; };
+		3B9BDB9E1D1C8C7D00D23076 /* Appodeal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3B9BDB9B1D1C8C1B00D23076 /* Appodeal.h */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		3B0C9BE01D1C87BE00F644AF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -13,6 +18,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				3B9BDB9E1D1C8C7D00D23076 /* Appodeal.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -20,7 +26,8 @@
 
 /* Begin PBXFileReference section */
 		3B0C9BE21D1C87BE00F644AF /* libappodeal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libappodeal.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B0C9BEC1D1C888900F644AF /* Appodeal */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Appodeal; sourceTree = "<group>"; };
+		3B9BDB9B1D1C8C1B00D23076 /* Appodeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appodeal.h; path = Appodeal/Appodeal.h; sourceTree = "<group>"; };
+		3B9BDB9C1D1C8C1B00D23076 /* Appodeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Appodeal.m; path = Appodeal/Appodeal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,10 +49,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3B9BDB9A1D1C8C1000D23076 /* Appodeal */ = {
+			isa = PBXGroup;
+			children = (
+				3B9BDB9B1D1C8C1B00D23076 /* Appodeal.h */,
+				3B9BDB9C1D1C8C1B00D23076 /* Appodeal.m */,
+			);
+			name = Appodeal;
+			sourceTree = "<group>";
+		};
 		3BE229E41D1C812D00495EE4 = {
 			isa = PBXGroup;
 			children = (
-				3B0C9BEC1D1C888900F644AF /* Appodeal */,
+				3B9BDB9A1D1C8C1000D23076 /* Appodeal */,
 				3B0C9BE31D1C87BE00F644AF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B9BDB9D1D1C8C1B00D23076 /* Appodeal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +165,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../react-native/React/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -155,6 +178,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -189,12 +213,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../react-native/React/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -221,6 +252,7 @@
 				3B0C9BEB1D1C87BE00F644AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BE229E81D1C812D00495EE4 /* Build configuration list for PBXProject "Appodeal" */ = {
 			isa = XCConfigurationList;

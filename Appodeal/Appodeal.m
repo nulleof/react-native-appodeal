@@ -1,9 +1,5 @@
 #import "Appodeal.h"
 
-@interface Appodeal ()
--(NSString*) debug;
-@end
-
 @implementation Appodeal
 
 RCT_EXPORT_METHOD()
