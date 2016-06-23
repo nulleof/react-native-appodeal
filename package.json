@@ -1,0 +1,34 @@
+{
+  "name": "react-native-appodeal",
+  "version": "1.0.0",
+  "description": "React-native plugin for Appodeal (http://appodeal.com)",
+  "main": "appodeal.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nulleof/react-native-appodeal.git"
+  },
+  "keywords": [
+    "Appodeal",
+    "react-native",
+    "android",
+    "iOS",
+    "advertising",
+    "ad",
+    "banner",
+    "interstitial"
+  ],
+  "author": "NullEOF <nulleof@gmail.com> (nulleof.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nulleof/react-native-appodeal/issues"
+  },
+  "homepage": "https://github.com/nulleof/react-native-appodeal#readme",
+  "peerDependencies": {
+    "react-native": ">=0.25.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
