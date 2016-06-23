@@ -6,27 +6,82 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3B0C9BE01D1C87BE00F644AF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		3B0C9BDC1D1C827900F644AF /* Appodeal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Appodeal.h; path = Appodeal/Appodeal.h; sourceTree = "<group>"; };
-		3B0C9BDD1D1C827900F644AF /* Appodeal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Appodeal.m; path = Appodeal/Appodeal.m; sourceTree = "<group>"; };
+		3B0C9BE21D1C87BE00F644AF /* libappodeal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libappodeal.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B0C9BEC1D1C888900F644AF /* Appodeal */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Appodeal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		3B0C9BDF1D1C87BE00F644AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
+		3B0C9BE31D1C87BE00F644AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B0C9BE21D1C87BE00F644AF /* libappodeal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3BE229E41D1C812D00495EE4 = {
 			isa = PBXGroup;
 			children = (
-				3B0C9BDC1D1C827900F644AF /* Appodeal.h */,
-				3B0C9BDD1D1C827900F644AF /* Appodeal.m */,
+				3B0C9BEC1D1C888900F644AF /* Appodeal */,
+				3B0C9BE31D1C87BE00F644AF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B0C9BE11D1C87BE00F644AF /* appodeal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B0C9BE91D1C87BE00F644AF /* Build configuration list for PBXNativeTarget "appodeal" */;
+			buildPhases = (
+				3B0C9BDE1D1C87BE00F644AF /* Sources */,
+				3B0C9BDF1D1C87BE00F644AF /* Frameworks */,
+				3B0C9BE01D1C87BE00F644AF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = appodeal;
+			productName = appodeal;
+			productReference = 3B0C9BE21D1C87BE00F644AF /* libappodeal.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3BE229E51D1C812D00495EE4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
+				TargetAttributes = {
+					3B0C9BE11D1C87BE00F644AF = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
 			};
 			buildConfigurationList = 3BE229E81D1C812D00495EE4 /* Build configuration list for PBXProject "Appodeal" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -36,14 +91,114 @@
 				en,
 			);
 			mainGroup = 3BE229E41D1C812D00495EE4;
+			productRefGroup = 3B0C9BE31D1C87BE00F644AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				3B0C9BE11D1C87BE00F644AF /* appodeal */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXSourcesBuildPhase section */
+		3B0C9BDE1D1C87BE00F644AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
 /* Begin XCBuildConfiguration section */
+		3B0C9BEA1D1C87BE00F644AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3B0C9BEB1D1C87BE00F644AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		3BE229E91D1C812D00495EE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -59,6 +214,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3B0C9BE91D1C87BE00F644AF /* Build configuration list for PBXNativeTarget "appodeal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B0C9BEA1D1C87BE00F644AF /* Debug */,
+				3B0C9BEB1D1C87BE00F644AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		3BE229E81D1C812D00495EE4 /* Build configuration list for PBXProject "Appodeal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
