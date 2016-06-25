@@ -2,7 +2,7 @@
 
 @implementation Appodeal
 
-RCT_EXPORT_METHOD()
+RCT_EXPORT_MODULE()
 //RCT_EXPORT_MODULE(Appodeal) //they are equal
 
 RCT_EXPORT_METHOD(debug:(NSString *) message) {
