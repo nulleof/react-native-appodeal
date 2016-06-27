@@ -10,10 +10,17 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
+import android.app.Activity;
 
 import com.tonofgames.appodeal.AppodealWrapper;
 
 public class AppodealPackage implements ReactPackage {
+
+  private Activity mActivity = null;
+
+  public AppodealPackage(Activity activity) {
+    mActivity = activity;
+  }
 
   @Override
   public List<Class<? extends JavaScriptModule>> createJSModules() {
@@ -27,10 +34,10 @@ public class AppodealPackage implements ReactPackage {
 
   @Override
   public List<NativeModule> createNativeModules(
-                              ReactApplicationContext reactContext) {
+          ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
 
-    modules.add(new AppodealWrapper(reactContext));
+    modules.add(new AppodealWrapper(reactContext, mActivity));
 
     return modules;
   }
