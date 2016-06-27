@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.tonofgames.appodeal.Appodeal;
+import com.tonofgames.appodeal.AppodealWrapper;
 
 public class AppodealPackage implements ReactPackage {
 
@@ -30,7 +30,7 @@ public class AppodealPackage implements ReactPackage {
                               ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
 
-    modules.add(new Appodeal(reactContext));
+    modules.add(new AppodealWrapper(reactContext));
 
     return modules;
   }
