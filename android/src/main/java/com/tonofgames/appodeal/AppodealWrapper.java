@@ -7,30 +7,31 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.LifecycleEventListener;
+import com.facebook.react.bridge.ActivityEventListener;
 
 import android.app.Activity;
+import android.content.Intent;
 import java.util.Map;
 import java.util.HashMap;
 import android.util.Log;
 
 import com.appodeal.ads.Appodeal;
 
-public class AppodealWrapper extends ReactContextBaseJavaModule implements LifecycleEventListener {
+public class AppodealWrapper extends ReactContextBaseJavaModule implements LifecycleEventListener, ActivityEventListener {
 
     private static final String USELESS_KEY = "USELESS";
     private static final String USELESS_VALUE = "Useless value";
 
-    private Activity mActivity = null;
 
-    public AppodealWrapper(ReactApplicationContext reactContext, Activity activity) {
+    public AppodealWrapper(ReactApplicationContext reactContext) {
         super(reactContext);
-        mActivity = activity;
         reactContext.addLifecycleEventListener(this);
+        reactContext.addActivityEventListener(this);
     }
 
     @Override
     public void onHostResume() {
-        Appodeal.onResume(mActivity, Appodeal.BANNER);
+        Appodeal.onResume(getCurrentActivity(), Appodeal.BANNER);
     }
 
     @Override
@@ -60,15 +61,19 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
         Log.d("Appodeal native log", message);
     }
 
+    public void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
+
+    }
+
     @ReactMethod
     public void init(String apiKey) {
         Appodeal.disableLocationPermissionCheck();
-        Appodeal.initialize(mActivity, apiKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
+        Appodeal.initialize(getCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
     }
 
     @ReactMethod
     public void showInterstitial() {
-        Appodeal.show(mActivity, Appodeal.INTERSTITIAL);
+        Appodeal.show(getCurrentActivity(), Appodeal.INTERSTITIAL);
     }
 
     @ReactMethod
@@ -78,7 +83,7 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
 
     @ReactMethod
     public void showSkippableVideo() {
-        Appodeal.show(mActivity, Appodeal.SKIPPABLE_VIDEO);
+        Appodeal.show(getCurrentActivity(), Appodeal.SKIPPABLE_VIDEO);
     }
 
     @ReactMethod
@@ -88,7 +93,7 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
 
     @ReactMethod
     public void showRewardedVideo() {
-        Appodeal.show(mActivity, Appodeal.REWARDED_VIDEO);
+        Appodeal.show(getCurrentActivity(), Appodeal.REWARDED_VIDEO);
     }
 
     @ReactMethod
@@ -98,12 +103,12 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
 
     @ReactMethod
     public void showBannerBottom() {
-        Appodeal.show(mActivity, Appodeal.BANNER_BOTTOM);
+        Appodeal.show(getCurrentActivity(), Appodeal.BANNER_BOTTOM);
     }
 
     @ReactMethod
     public void hideBanner() {
-        Appodeal.hide(mActivity, Appodeal.BANNER);
+        Appodeal.hide(getCurrentActivity(), Appodeal.BANNER);
     }
 
     @ReactMethod

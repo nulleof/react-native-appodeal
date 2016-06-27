@@ -16,12 +16,6 @@ import com.tonofgames.appodeal.AppodealWrapper;
 
 public class AppodealPackage implements ReactPackage {
 
-  private Activity mActivity = null;
-
-  public AppodealPackage(Activity activity) {
-    mActivity = activity;
-  }
-
   @Override
   public List<Class<? extends JavaScriptModule>> createJSModules() {
     return Collections.emptyList();
@@ -37,7 +31,7 @@ public class AppodealPackage implements ReactPackage {
           ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
 
-    modules.add(new AppodealWrapper(reactContext, mActivity));
+    modules.add(new AppodealWrapper(reactContext));
 
     return modules;
   }
