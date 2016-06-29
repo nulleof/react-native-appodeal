@@ -1,5 +1,7 @@
 package com.tonofgames.appodeal;
 
+import com.appodeal.ads.BannerCallbacks;
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
@@ -13,15 +15,35 @@ import android.app.Activity;
 import android.content.Intent;
 import java.util.Map;
 import java.util.HashMap;
+
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.appodeal.ads.Appodeal;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 public class AppodealWrapper extends ReactContextBaseJavaModule implements LifecycleEventListener, ActivityEventListener {
 
     private static final String USELESS_KEY = "USELESS";
     private static final String USELESS_VALUE = "Useless value";
 
+    private int bannerHeight = 0;
+
+    public enum Events {
+        EVENT_SIZE_CHANGE("onSizeChange");
+
+        private final String mName;
+
+        Events(final String name) {
+            mName = name;
+        }
+
+        @Override
+        public String toString() {
+            return mName;
+        }
+    }
 
     public AppodealWrapper(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -62,9 +84,47 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
 
     @ReactMethod
     public void init(String apiKey) {
+
+        Appodeal.setBannerCallbacks(new BannerCallbacks() {
+            @Override
+            public void onBannerLoaded(int height, boolean isPrecache) {
+                //send event with banner size changed
+                bannerHeight = height;
+
+                WritableMap event = Arguments.createMap();
+                event.putString("height", Integer.toString(height));
+                sendEvent(Events.EVENT_SIZE_CHANGE.toString(), event);
+            }
+
+            @Override
+            public void onBannerFailedToLoad() {
+
+            }
+
+            @Override
+            public void onBannerShown() {
+
+            }
+
+            @Override
+            public void onBannerClicked() {
+
+            }
+        });
+
         Appodeal.disableLocationPermissionCheck();
         Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO);
         Appodeal.initialize(getCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
+    }
+
+    @ReactMethod
+    public void setTesting(Boolean isTesting) {
+        Appodeal.setTesting(isTesting);
+    }
+
+    @ReactMethod
+    public void setLogging(Boolean isLogging) {
+        Appodeal.setLogging(isLogging);
     }
 
     @ReactMethod
@@ -110,5 +170,14 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     @ReactMethod
     public void isBannerLoaded(Callback booleanCallback) {
         booleanCallback.invoke(Appodeal.isLoaded(Appodeal.BANNER));
+    }
+
+    @ReactMethod
+    public void getBannerHeight(Callback integerCallback) {
+        integerCallback.invoke(bannerHeight);
+    }
+
+    private void sendEvent(String eventName, @Nullable WritableMap params) {
+        getReactApplicationContext().getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
     }
 }
