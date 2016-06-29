@@ -56,11 +56,6 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
         return constants;
     }
 
-    @ReactMethod
-    public void debug(String message) {
-        Log.d("Appodeal native log", message);
-    }
-
     public void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
 
     }
@@ -68,7 +63,8 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     @ReactMethod
     public void init(String apiKey) {
         Appodeal.disableLocationPermissionCheck();
-        Appodeal.initialize(getCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
+        Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO);
+        Appodeal.initialize(getCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
     }
 
     @ReactMethod
