@@ -41,3 +41,9 @@ jspm_packages
 
 # Android studio files
 android.iml
+
+android/gradlew
+android/gradlew.bat
+android/local.properties
+android/.idea
+android/gradle
