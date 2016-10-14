@@ -68,7 +68,7 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
 
     @Override
     public String getName() {
-        return "Appodeal";
+        return "RCTAppodeal";
     }
 
     @Override

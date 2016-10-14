@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B9BDB9D1D1C8C1B00D23076 /* Appodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9BDB9C1D1C8C1B00D23076 /* Appodeal.m */; };
-		3B9BDB9E1D1C8C7D00D23076 /* Appodeal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3B9BDB9B1D1C8C1B00D23076 /* Appodeal.h */; };
+		3BBBA69C1DB113060061CC60 /* RCTAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBBA69B1DB113060061CC60 /* RCTAppodeal.m */; };
+		3BBBA69D1DB113060061CC60 /* RCTAppodeal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3BBBA69A1DB113060061CC60 /* RCTAppodeal.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3B0C9BE01D1C87BE00F644AF /* CopyFiles */ = {
+		3BBBA6951DB113060061CC60 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				3B9BDB9E1D1C8C7D00D23076 /* Appodeal.h in CopyFiles */,
+				3BBBA69D1DB113060061CC60 /* RCTAppodeal.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3B0C9BE21D1C87BE00F644AF /* libappodeal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libappodeal.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B9BDB9B1D1C8C1B00D23076 /* Appodeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appodeal.h; path = Appodeal/Appodeal.h; sourceTree = "<group>"; };
-		3B9BDB9C1D1C8C1B00D23076 /* Appodeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Appodeal.m; path = Appodeal/Appodeal.m; sourceTree = "<group>"; };
+		3BBBA6971DB113060061CC60 /* libRCTAppodeal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTAppodeal.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BBBA69A1DB113060061CC60 /* RCTAppodeal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTAppodeal.h; sourceTree = "<group>"; };
+		3BBBA69B1DB113060061CC60 /* RCTAppodeal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTAppodeal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3B0C9BDF1D1C87BE00F644AF /* Frameworks */ = {
+		3BBBA6941DB113060061CC60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,94 +41,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3B0C9BE31D1C87BE00F644AF /* Products */ = {
+		3BBBA68E1DB113060061CC60 = {
 			isa = PBXGroup;
 			children = (
-				3B0C9BE21D1C87BE00F644AF /* libappodeal.a */,
+				3BBBA6991DB113060061CC60 /* RCTAppodeal */,
+				3BBBA6981DB113060061CC60 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BBBA6981DB113060061CC60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BBBA6971DB113060061CC60 /* libRCTAppodeal.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3B9BDB9A1D1C8C1000D23076 /* Appodeal */ = {
+		3BBBA6991DB113060061CC60 /* RCTAppodeal */ = {
 			isa = PBXGroup;
 			children = (
-				3B9BDB9B1D1C8C1B00D23076 /* Appodeal.h */,
-				3B9BDB9C1D1C8C1B00D23076 /* Appodeal.m */,
+				3BBBA69A1DB113060061CC60 /* RCTAppodeal.h */,
+				3BBBA69B1DB113060061CC60 /* RCTAppodeal.m */,
 			);
-			name = Appodeal;
-			sourceTree = "<group>";
-		};
-		3BE229E41D1C812D00495EE4 = {
-			isa = PBXGroup;
-			children = (
-				3B9BDB9A1D1C8C1000D23076 /* Appodeal */,
-				3B0C9BE31D1C87BE00F644AF /* Products */,
-			);
+			path = RCTAppodeal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3B0C9BE11D1C87BE00F644AF /* appodeal */ = {
+		3BBBA6961DB113060061CC60 /* RCTAppodeal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B0C9BE91D1C87BE00F644AF /* Build configuration list for PBXNativeTarget "appodeal" */;
+			buildConfigurationList = 3BBBA6A01DB113060061CC60 /* Build configuration list for PBXNativeTarget "RCTAppodeal" */;
 			buildPhases = (
-				3B0C9BDE1D1C87BE00F644AF /* Sources */,
-				3B0C9BDF1D1C87BE00F644AF /* Frameworks */,
-				3B0C9BE01D1C87BE00F644AF /* CopyFiles */,
+				3BBBA6931DB113060061CC60 /* Sources */,
+				3BBBA6941DB113060061CC60 /* Frameworks */,
+				3BBBA6951DB113060061CC60 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = appodeal;
-			productName = appodeal;
-			productReference = 3B0C9BE21D1C87BE00F644AF /* libappodeal.a */;
+			name = RCTAppodeal;
+			productName = RCTAppodeal;
+			productReference = 3BBBA6971DB113060061CC60 /* libRCTAppodeal.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3BE229E51D1C812D00495EE4 /* Project object */ = {
+		3BBBA68F1DB113060061CC60 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Igor Knyazev";
 				TargetAttributes = {
-					3B0C9BE11D1C87BE00F644AF = {
-						CreatedOnToolsVersion = 7.3.1;
+					3BBBA6961DB113060061CC60 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 596W4P842G;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 3BE229E81D1C812D00495EE4 /* Build configuration list for PBXProject "Appodeal" */;
+			buildConfigurationList = 3BBBA6921DB113060061CC60 /* Build configuration list for PBXProject "RCTAppodeal" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 3BE229E41D1C812D00495EE4;
-			productRefGroup = 3B0C9BE31D1C87BE00F644AF /* Products */;
+			mainGroup = 3BBBA68E1DB113060061CC60;
+			productRefGroup = 3BBBA6981DB113060061CC60 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B0C9BE11D1C87BE00F644AF /* appodeal */,
+				3BBBA6961DB113060061CC60 /* RCTAppodeal */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3B0C9BDE1D1C87BE00F644AF /* Sources */ = {
+		3BBBA6931DB113060061CC60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B9BDB9D1D1C8C1B00D23076 /* Appodeal.m in Sources */,
+				3BBBA69C1DB113060061CC60 /* RCTAppodeal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		3B0C9BEA1D1C87BE00F644AF /* Debug */ = {
+		3BBBA69E1DB113060061CC60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -140,10 +143,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -165,24 +171,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/node_modules/react-native/React/**",
-					"$(SRCROOT)/../react-native/React/**",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
-		3B0C9BEB1D1C87BE00F644AF /* Release */ = {
+		3BBBA69F1DB113060061CC60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -194,10 +190,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -213,57 +212,54 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/node_modules/react-native/React/**",
-					"$(SRCROOT)/../react-native/React/**",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		3BE229E91D1C812D00495EE4 /* Debug */ = {
+		3BBBA6A11DB113060061CC60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 596W4P842G;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		3BE229EA1D1C812D00495EE4 /* Release */ = {
+		3BBBA6A21DB113060061CC60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 596W4P842G;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3B0C9BE91D1C87BE00F644AF /* Build configuration list for PBXNativeTarget "appodeal" */ = {
+		3BBBA6921DB113060061CC60 /* Build configuration list for PBXProject "RCTAppodeal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3B0C9BEA1D1C87BE00F644AF /* Debug */,
-				3B0C9BEB1D1C87BE00F644AF /* Release */,
+				3BBBA69E1DB113060061CC60 /* Debug */,
+				3BBBA69F1DB113060061CC60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3BE229E81D1C812D00495EE4 /* Build configuration list for PBXProject "Appodeal" */ = {
+		3BBBA6A01DB113060061CC60 /* Build configuration list for PBXNativeTarget "RCTAppodeal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3BE229E91D1C812D00495EE4 /* Debug */,
-				3BE229EA1D1C812D00495EE4 /* Release */,
+				3BBBA6A11DB113060061CC60 /* Debug */,
+				3BBBA6A21DB113060061CC60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3BE229E51D1C812D00495EE4 /* Project object */;
+	rootObject = 3BBBA68F1DB113060061CC60 /* Project object */;
 }
