@@ -15,7 +15,15 @@ react-native link
 ### iOS
 You should add this to your Podfile:
 ```
-pod 'Appodeal', '~> 1.1'
+platform :ios, '8.1'
+use_frameworks!
+
+source 'https://github.com/appodeal/CocoaPods.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'project-name' do
+    pod 'Appodeal', '~> 1.1'
+end
 ```
 
 And then run pod command:
