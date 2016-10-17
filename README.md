@@ -31,3 +31,5 @@ And then run pod command:
 $ cd {project-dir}/ios
 $ pod install
 ```
+
+For now, if you haven't use pods in your project you should use *.xcworkspace as your project file for build and running application in XCode.
