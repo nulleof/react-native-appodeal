@@ -15,7 +15,7 @@ react-native link
 ### iOS
 You should add this to your Podfile:
 ```
-pod 'Appodeal', '~> 0.10'
+pod 'Appodeal', '~> 1.1'
 ```
 
 And then run pod command:
