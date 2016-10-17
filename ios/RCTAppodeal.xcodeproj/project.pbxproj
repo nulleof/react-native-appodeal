@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B9805741DB54224002CDD2D /* libRCTAppodeal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBBA6971DB113060061CC60 /* libRCTAppodeal.a */; };
 		3BBBA69C1DB113060061CC60 /* RCTAppodeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBBA69B1DB113060061CC60 /* RCTAppodeal.m */; };
 		3BBBA69D1DB113060061CC60 /* RCTAppodeal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3BBBA69A1DB113060061CC60 /* RCTAppodeal.h */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B9805741DB54224002CDD2D /* libRCTAppodeal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,8 +228,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/node_modules/react-native/React/**",
-					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/../../react-native/React/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -242,8 +243,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/node_modules/react-native/React/**",
-					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/../../react-native/React/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
