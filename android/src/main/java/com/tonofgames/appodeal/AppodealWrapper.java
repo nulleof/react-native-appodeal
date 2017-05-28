@@ -119,7 +119,7 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
 
         Appodeal.disableLocationPermissionCheck();
         Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO);
-        Appodeal.initialize(getCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
+        Appodeal.initialize(getCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
     }
 
     @ReactMethod
@@ -165,6 +165,11 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     @ReactMethod
     public void showBannerBottom() {
         Appodeal.show(getCurrentActivity(), Appodeal.BANNER_BOTTOM);
+    }
+
+    @ReactMethod
+    public void showBannerTop() {
+        Appodeal.show(getCurrentActivity(), Appodeal.BANNER_TOP);
     }
 
     @ReactMethod
