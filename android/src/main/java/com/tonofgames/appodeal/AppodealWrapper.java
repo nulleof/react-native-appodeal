@@ -123,6 +123,11 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     }
 
     @ReactMethod
+    public void disableNetwork(String network) {
+        Appodeal.disableNetwork(getCurrentActivity(), network);
+    }
+
+    @ReactMethod
     public void setTesting(Boolean isTesting) {
         Appodeal.setTesting(isTesting);
     }
