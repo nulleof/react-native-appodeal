@@ -52,6 +52,11 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     }
 
     @Override
+    public void onNewIntent(Intent intent) {
+
+    }
+
+    @Override
     public void onHostResume() {
         Appodeal.onResume(getCurrentActivity(), Appodeal.BANNER);
     }
@@ -78,7 +83,7 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
         return constants;
     }
 
-    public void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
+    public void onActivityResult(Activity activity, final int requestCode, final int resultCode, final Intent intent) {
 
     }
 

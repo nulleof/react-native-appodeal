@@ -1,6 +1,6 @@
 import { NativeModules, DeviceEventEmitter, NativeAppEventEmitter } from 'react-native';
 
-const Appodeal = NativeModules.RCTAppodeal;
+const Appodeal = NativeModules.Appodeal;
 
 const eventHandlers = {};
 
