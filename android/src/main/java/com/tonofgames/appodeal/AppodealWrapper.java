@@ -124,7 +124,7 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
 
     @ReactMethod
     public void disableNetwork(String network) {
-        Appodeal.disableNetwork(network);
+        Appodeal.disableNetwork(getReactApplicationContext(), network);
     }
 
     @ReactMethod
