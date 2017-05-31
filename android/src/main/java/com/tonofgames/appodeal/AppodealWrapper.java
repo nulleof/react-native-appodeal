@@ -20,13 +20,13 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.appodeal.ads.Appodeal;
+import com.appodeal.ads.UserSettings;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 public class AppodealWrapper extends ReactContextBaseJavaModule implements LifecycleEventListener, ActivityEventListener {
 
-    private static final String USELESS_KEY = "USELESS";
-    private static final String USELESS_VALUE = "Useless value";
+    private UserSettings userSettings;
 
     private int bannerHeight = 0;
 
@@ -49,6 +49,7 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
         super(reactContext);
         reactContext.addLifecycleEventListener(this);
         reactContext.addActivityEventListener(this);
+        this.userSettings = Appodeal.getUserSettings(getReactApplicationContext());
     }
 
     @Override
@@ -79,12 +80,84 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     @Override
     public Map<String, Object> getConstants() {
         final Map<String, Object> constants = new HashMap<>();
-        constants.put(USELESS_KEY, USELESS_VALUE);
         return constants;
     }
 
     public void onActivityResult(Activity activity, final int requestCode, final int resultCode, final Intent intent) {
 
+    }
+
+    @ReactMethod
+    public void setAge(int age) {
+      this.userSettings.setAge(age);
+    }
+
+    @ReactMethod
+    public void setBirthday(String bdate) {
+      this.userSettings.setBirthday(bdate);
+    }
+
+    @ReactMethod
+    public void setEmail(String email) {
+      this.userSettings.setEmail(email);
+    }
+
+    @ReactMethod
+    public void setGender(String gender) {
+      if (gender == "female") {
+        this.userSettings.setGender(UserSettings.Gender.FEMALE);
+      } else if (gender == "male") {
+        this.userSettings.setGender(UserSettings.Gender.MALE);
+      } else {
+        this.userSettings.setGender(UserSettings.Gender.OTHER);
+      }
+    }
+
+    @ReactMethod
+    public void setInterests(String interests) {
+      this.userSettings.setInterests(interests);
+    }
+
+    @ReactMethod
+    public void setRelation (String relation) {
+      switch (relation) {
+        case "dating":    this.userSettings.setRelation(UserSettings.Relation.DATING);
+                          break;
+        case "engaged":   this.userSettings.setRelation(UserSettings.Relation.ENGAGED);
+                          break;
+        case "married":   this.userSettings.setRelation(UserSettings.Relation.MARRIED);
+                          break;
+        case "searching": this.userSettings.setRelation(UserSettings.Relation.SEARCHING);
+                          break;
+        case "single":    this.userSettings.setRelation(UserSettings.Relation.SINGLE);
+                          break;
+        case "other":     this.userSettings.setRelation(UserSettings.Relation.OTHER);
+                          break;
+      }
+    }
+
+    @ReactMethod
+    public void setAlcohol (String relation) {
+      switch (relation) {
+        case "negative": this.userSettings.setAlcohol(UserSettings.Alcohol.NEGATIVE);
+                         break;
+        case "neutral":  this.userSettings.setAlcohol(UserSettings.Alcohol.NEUTRAL);
+                         break;
+        case "positive": this.userSettings.setAlcohol(UserSettings.Alcohol.POSITIVE);
+                         break;
+      }
+    }
+
+    @ReactMethod
+    public void setSmoking (String relation) {
+      switch (relation) {
+        case "negative": this.userSettings.setSmoking(UserSettings.Smoking.NEGATIVE);
+                         break;
+        case "neutral":  this.userSettings.setSmoking(UserSettings.Smoking.NEUTRAL);
+                         break;
+        case "positive": this.userSettings.setSmoking(UserSettings.Smoking.POSITIVE);
+                         break;
+      }
     }
 
     @ReactMethod
