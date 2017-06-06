@@ -93,16 +93,6 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     }
 
     @ReactMethod
-    public void setBirthday(String bdate) {
-      this.userSettings.setBirthday(bdate);
-    }
-
-    @ReactMethod
-    public void setEmail(String email) {
-      this.userSettings.setEmail(email);
-    }
-
-    @ReactMethod
     public void setGender(String gender) {
       if (gender == "female") {
         this.userSettings.setGender(UserSettings.Gender.FEMALE);
@@ -110,53 +100,6 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
         this.userSettings.setGender(UserSettings.Gender.MALE);
       } else {
         this.userSettings.setGender(UserSettings.Gender.OTHER);
-      }
-    }
-
-    @ReactMethod
-    public void setInterests(String interests) {
-      this.userSettings.setInterests(interests);
-    }
-
-    @ReactMethod
-    public void setRelation (String relation) {
-      switch (relation) {
-        case "dating":    this.userSettings.setRelation(UserSettings.Relation.DATING);
-                          break;
-        case "engaged":   this.userSettings.setRelation(UserSettings.Relation.ENGAGED);
-                          break;
-        case "married":   this.userSettings.setRelation(UserSettings.Relation.MARRIED);
-                          break;
-        case "searching": this.userSettings.setRelation(UserSettings.Relation.SEARCHING);
-                          break;
-        case "single":    this.userSettings.setRelation(UserSettings.Relation.SINGLE);
-                          break;
-        case "other":     this.userSettings.setRelation(UserSettings.Relation.OTHER);
-                          break;
-      }
-    }
-
-    @ReactMethod
-    public void setAlcohol (String relation) {
-      switch (relation) {
-        case "negative": this.userSettings.setAlcohol(UserSettings.Alcohol.NEGATIVE);
-                         break;
-        case "neutral":  this.userSettings.setAlcohol(UserSettings.Alcohol.NEUTRAL);
-                         break;
-        case "positive": this.userSettings.setAlcohol(UserSettings.Alcohol.POSITIVE);
-                         break;
-      }
-    }
-
-    @ReactMethod
-    public void setSmoking (String relation) {
-      switch (relation) {
-        case "negative": this.userSettings.setSmoking(UserSettings.Smoking.NEGATIVE);
-                         break;
-        case "neutral":  this.userSettings.setSmoking(UserSettings.Smoking.NEUTRAL);
-                         break;
-        case "positive": this.userSettings.setSmoking(UserSettings.Smoking.POSITIVE);
-                         break;
       }
     }
 
@@ -191,8 +134,7 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
         });
 
         Appodeal.disableLocationPermissionCheck();
-        Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO);
-        Appodeal.initialize(getCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
+        Appodeal.initialize(getCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
     }
 
     @ReactMethod
@@ -210,11 +152,6 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     }
 
     @ReactMethod
-    public void setLogging(Boolean isLogging) {
-        Appodeal.setLogging(isLogging);
-    }
-
-    @ReactMethod
     public void showInterstitial() {
         Appodeal.show(getCurrentActivity(), Appodeal.INTERSTITIAL);
     }
@@ -222,16 +159,6 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     @ReactMethod
     public void isInterstitialLoaded(Callback booleanCallback) {
         booleanCallback.invoke(Appodeal.isLoaded(Appodeal.INTERSTITIAL));
-    }
-
-    @ReactMethod
-    public void showSkippableVideo() {
-        Appodeal.show(getCurrentActivity(), Appodeal.SKIPPABLE_VIDEO);
-    }
-
-    @ReactMethod
-    public void isSkippableVideoLoaded(Callback booleanCallback) {
-        booleanCallback.invoke(Appodeal.isLoaded(Appodeal.SKIPPABLE_VIDEO));
     }
 
     @ReactMethod
