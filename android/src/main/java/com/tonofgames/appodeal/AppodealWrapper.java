@@ -17,10 +17,10 @@ import java.util.Map;
 import java.util.HashMap;
 
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.appodeal.ads.Appodeal;
 import com.appodeal.ads.UserSettings;
+import com.appodeal.ads.utils.Log;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
@@ -85,6 +85,21 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
 
     public void onActivityResult(Activity activity, final int requestCode, final int resultCode, final Intent intent) {
 
+    }
+
+    @ReactMethod
+    public void setLogLevel(String level) {
+      switch (level) {
+        case "debug":
+          Appodeal.setLogLevel(Log.LogLevel.debug);
+          break;
+        case "verbose":
+          Appodeal.setLogLevel(Log.LogLevel.verbose);
+          break;
+        case "none":
+          Appodeal.setLogLevel(Log.LogLevel.none);
+          break;
+      }
     }
 
     @ReactMethod
