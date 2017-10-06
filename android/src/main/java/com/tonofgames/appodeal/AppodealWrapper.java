@@ -17,16 +17,16 @@ import java.util.Map;
 import java.util.HashMap;
 
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.appodeal.ads.Appodeal;
+import com.appodeal.ads.UserSettings;
+import com.appodeal.ads.utils.Log;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 public class AppodealWrapper extends ReactContextBaseJavaModule implements LifecycleEventListener, ActivityEventListener {
 
-    private static final String USELESS_KEY = "USELESS";
-    private static final String USELESS_VALUE = "Useless value";
+    private UserSettings userSettings;
 
     private int bannerHeight = 0;
 
@@ -49,6 +49,12 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
         super(reactContext);
         reactContext.addLifecycleEventListener(this);
         reactContext.addActivityEventListener(this);
+        this.userSettings = Appodeal.getUserSettings(getReactApplicationContext());
+    }
+
+    @Override
+    public void onNewIntent(Intent intent) {
+
     }
 
     @Override
@@ -74,12 +80,42 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     @Override
     public Map<String, Object> getConstants() {
         final Map<String, Object> constants = new HashMap<>();
-        constants.put(USELESS_KEY, USELESS_VALUE);
         return constants;
     }
 
-    public void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
+    public void onActivityResult(Activity activity, final int requestCode, final int resultCode, final Intent intent) {
 
+    }
+
+    @ReactMethod
+    public void setLogLevel(String level) {
+      switch (level) {
+        case "debug":
+          Appodeal.setLogLevel(Log.LogLevel.debug);
+          break;
+        case "verbose":
+          Appodeal.setLogLevel(Log.LogLevel.verbose);
+          break;
+        case "none":
+          Appodeal.setLogLevel(Log.LogLevel.none);
+          break;
+      }
+    }
+
+    @ReactMethod
+    public void setAge(int age) {
+      this.userSettings.setAge(age);
+    }
+
+    @ReactMethod
+    public void setGender(String gender) {
+      if (gender == "female") {
+        this.userSettings.setGender(UserSettings.Gender.FEMALE);
+      } else if (gender == "male") {
+        this.userSettings.setGender(UserSettings.Gender.MALE);
+      } else {
+        this.userSettings.setGender(UserSettings.Gender.OTHER);
+      }
     }
 
     @ReactMethod
@@ -113,18 +149,21 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
         });
 
         Appodeal.disableLocationPermissionCheck();
-        Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO);
-        Appodeal.initialize(getCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
+        Appodeal.initialize(getCurrentActivity(), apiKey, Appodeal.INTERSTITIAL | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
+    }
+
+    @ReactMethod
+    public void disableNetwork(String network) {
+        try {
+          Appodeal.disableNetwork(getReactApplicationContext(), network);
+        } catch(NullPointerException e) {
+          // something went wrong...
+        }
     }
 
     @ReactMethod
     public void setTesting(Boolean isTesting) {
         Appodeal.setTesting(isTesting);
-    }
-
-    @ReactMethod
-    public void setLogging(Boolean isLogging) {
-        Appodeal.setLogging(isLogging);
     }
 
     @ReactMethod
@@ -135,16 +174,6 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     @ReactMethod
     public void isInterstitialLoaded(Callback booleanCallback) {
         booleanCallback.invoke(Appodeal.isLoaded(Appodeal.INTERSTITIAL));
-    }
-
-    @ReactMethod
-    public void showSkippableVideo() {
-        Appodeal.show(getCurrentActivity(), Appodeal.SKIPPABLE_VIDEO);
-    }
-
-    @ReactMethod
-    public void isSkippableVideoLoaded(Callback booleanCallback) {
-        booleanCallback.invoke(Appodeal.isLoaded(Appodeal.SKIPPABLE_VIDEO));
     }
 
     @ReactMethod
@@ -160,6 +189,11 @@ public class AppodealWrapper extends ReactContextBaseJavaModule implements Lifec
     @ReactMethod
     public void showBannerBottom() {
         Appodeal.show(getCurrentActivity(), Appodeal.BANNER_BOTTOM);
+    }
+
+    @ReactMethod
+    public void showBannerTop() {
+        Appodeal.show(getCurrentActivity(), Appodeal.BANNER_TOP);
     }
 
     @ReactMethod
